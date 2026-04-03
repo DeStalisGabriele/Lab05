@@ -41,3 +41,13 @@ class Controller:
             self._view.txt_result.controls.append(ft.Text(str(corso)))
         self._view.update_page()
 
+    def iscrivi (self, e):
+        corso = self._view.ddCorso.value
+        matricola = self._view.txtMatricola.value
+        if matricola is None : self._view.create_alert("inserisci una matricola!")
+        if corso is None : self._view.create_alert("inserisci un corso!")
+        corso_DAO.iscrivi(matricola, corso)
+        self._view.create_alert("Studente iscritto con successo!")
+
+
+

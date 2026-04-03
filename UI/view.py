@@ -58,7 +58,10 @@ class View(ft.UserControl):
         self.btnCercaCorsi = ft.ElevatedButton (text="Cerca Corsi",
                                                 on_click=self._controller.cercaCorsi)
 
-        row3 = ft.Row([self.btnCercaStudente, self.btnCercaCorsi])
+        self.btnIscrivi = ft.ElevatedButton (text="Iscrivi",
+                                             on_click=self._controller.iscrivi)
+
+        row3 = ft.Row([self.btnCercaStudente, self.btnCercaCorsi, self.btnIscrivi])
 
         #aggiungo le righe alla pagina
         self._page.controls.extend([row1, row2, row3]) #con extend posso aggiungere le righe in un colpo solo

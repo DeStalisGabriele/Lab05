@@ -91,4 +91,12 @@ class corso_DAO:
         cnx.close()
         return corsi
 
-
+    @staticmethod
+    def iscrivi(matricola, codins):
+        cnx = DBConnect.get_connection()
+        cursor = cnx.cursor(dictionary=True)
+        cursor.execute("INSERT INTO iscrizione (matricola, codins) "
+                       "VALUES (%s, %s)", (matricola, codins))
+        cnx.commit()  # importante per salvare nel DB
+        cursor.close()
+        cnx.close()
